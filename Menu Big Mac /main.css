@@ -1,0 +1,41 @@
+.big-mac-toggle {
+    --bt-size: 5rem;
+    --bt-padding: 1rem;
+    height: var(--bt-size);
+    width: var(--bt-size);
+    position: relative;
+}
+
+.big-mac-toggle > span ,
+.big-mac-toggle::before,
+.big-mac-toggle::after {
+    content: '';
+    position: absolute;
+    left: var(--bt-padding);
+    right: var(--bt-padding);
+    height: 2px;
+    background-color: black;
+    transition: .3s;
+}
+
+.big-mac-toggle::before{
+    top: var(--bt-padding);
+}
+
+.big-mac-toggle::after{
+    bottom: var(--bt-padding);
+}
+
+.big-mac-toggle:hover::before{
+    transform-origin: 0 0 ;
+    transform: rotate(45deg) scaleX(1.4);
+}
+
+.big-mac-toggle:hover::after{
+    transform-origin: 0 0 ;
+    transform: rotate(-45deg) scaleX(1.4);
+}
+
+.big-mac-toggle:hover > span {
+    transform: scale(0);
+}
