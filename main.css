@@ -1,0 +1,73 @@
+:root{
+    --width-main-menu: 70rem;
+}
+
+.big-mac-toggle {
+    --bt-size: 5rem;
+    --bt-padding: 1rem;
+    height: var(--bt-size);
+    width: var(--bt-size);
+    position: fixed;
+    cursor: pointer;
+    left: 1em;
+    top: 1em;
+    z-index: 1;
+    transition: .3s;
+}
+
+.big-mac-toggle > span ,
+.big-mac-toggle::before,
+.big-mac-toggle::after {
+    content: '';
+    position: absolute;
+    left: var(--bt-padding);
+    right: var(--bt-padding);
+    height: 2px;
+    background-color: black;
+    transition: .3s;
+}
+
+.big-mac-toggle::before{
+    top: var(--bt-padding);
+}
+
+.big-mac-toggle::after{
+    bottom: var(--bt-padding);
+}
+
+.big-mac-toggle.opened {
+    left: 0;
+    transform: translateX(calc(var(--width-main-menu) - (var(--bt-size) /2 )));
+    border-radius: 50%;
+}
+
+.big-mac-toggle.opened::before{
+    transform-origin: 0 0 ;
+    transform: rotate(45deg) scaleX(1.35);
+}
+
+.big-mac-toggle.opened::after{
+    transform-origin: 0 0 ;
+    transform: rotate(-45deg) scaleX(1.35);
+}
+
+.big-mac-toggle.opened > span {
+    transform: scale(0);
+}
+/*-----------------------------------------------*/
+
+
+nav.main-menu{
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    left: 0;
+    top: 0;
+    width:70rem;
+    height: 100vh;
+    transition: .3s;
+    transform: translateX(-100%);
+}
+
+nav.main-menu.opened{
+    transform: translateX(0%);
+}
