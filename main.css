@@ -1,16 +1,16 @@
 :root{
-    --width-main-menu: 70rem;
+    --width-main-menu: 30rem;
 }
 
 .big-mac-toggle {
-    --bt-size: 5rem;
-    --bt-padding: 1rem;
+    --bt-size: 2.5rem;
+    --bt-padding: .3rem;
     height: var(--bt-size);
     width: var(--bt-size);
     position: fixed;
     cursor: pointer;
     left: 1em;
-    top: 1em;
+    bottom: 1em;
     z-index: 1;
     transition: .3s;
 }
@@ -62,12 +62,61 @@ nav.main-menu{
     background-color: rgba(0, 0, 0, .5);
     left: 0;
     top: 0;
-    width:70rem;
+    width:var(--width-main-menu);
     height: 100vh;
     transition: .3s;
     transform: translateX(-100%);
+    backdrop-filter: blur(1px);
+}
+
+nav.main-menu a {
+    display: block;
+    background-color: rgba(255, 255, 255, .95);
+    margin: .5rem;
+    padding: .5rem;
+    text-decoration: none;
+    color: black;
+}
+
+nav.main-menu a:visited{
+    color: red;
 }
 
 nav.main-menu.opened{
     transform: translateX(0%);
 }
+
+
+
+/*-------------------------------------------------------*/
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+}
+
+header {
+    height: 200px;
+}
+
+footer {
+    height: 150px;
+}
+
+main {
+    min-height: calc(100dvh - 350px );
+    border: 12px solid pink;
+}
+
